@@ -1,9 +1,11 @@
 import React from 'react'
+import FooterBanner from '../components/FooterBanner'
+import HeroBanner from '../components/HeroBanner'
 
 const Home = () => {
   return (
     <>
-      HeroBannerComponent
+      <HeroBanner />
       <div className="products-heading">
         <h2>Best Selling Products</h2>
         <p>Speakers of many variations</p>
@@ -15,7 +17,7 @@ const Home = () => {
         ))}
       </div>
 
-      FooterComponent
+      <FooterBanner />
     </>
   )
 }
