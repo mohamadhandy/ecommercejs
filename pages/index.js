@@ -2,6 +2,7 @@ import React from 'react'
 import FooterBanner from '../components/FooterBanner'
 import { client } from '../lib/client'
 import HeroBanner from '../components/HeroBanner'
+import Product from '../components/Product'
 
 const Home = ({ products, bannerData }) => {
   return (
@@ -13,12 +14,12 @@ const Home = ({ products, bannerData }) => {
       </div>
 
       <div className="products-container">
-        {products?.map(product => (
-          product.price
+        {products?.map((product, index) => (
+          <Product key={index} product={product} />
         ))}
       </div>
 
-      <FooterBanner />
+      <FooterBanner footerBanner={bannerData.length && bannerData[0]} />
     </>
   )
 }
