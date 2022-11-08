@@ -1,23 +1,26 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Link from 'next/link'
 
-const HeroBanner = () => {
+import { urlFor } from '../lib/client'
+
+const HeroBanner = ({ heroBanner }) => {
   return (
     <div className="hero-banner-container">
       <div>
-        <p className="beats-solo">SMALL TEXT</p>
-        <h3>MID TEXT</h3>
-        <Image src="/78.png" width={200} height={200} alt="test laptop" className="hero-banner-image" />
+        <p className="beats-solo">{heroBanner.smallText}</p>
+        <h3>{heroBanner.midText}</h3>
+        <h1>{heroBanner.largeText1}</h1>
+        <img src={urlFor(heroBanner.image)} alt="headphones" className="hero-banner-image" />
         <div>
-          <Link href={'/products/id'}>
+          <Link href={`/products/${heroBanner.product}`}>
             <button type='button'>
-              BUTTON TEXT
+              {heroBanner.buttonText}
             </button>
           </Link>
           <div className="desc">
-            <h5>Description</h5>
-            <p>ACTUAL DESCRIPTION</p>
+            <h5>{heroBanner.product}</h5>
+            <p>{heroBanner.desc}</p>
           </div>
         </div>
       </div>
